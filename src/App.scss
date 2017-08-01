@@ -1,0 +1,18 @@
+@import "./variables";
+
+.App {
+  min-height: 100vh;
+  @include flex-column;
+
+  background: linear-gradient(to bottom, #A7C5ED, #E3ECF9 70%, #97D2AC);
+  padding: $padding-l;
+
+  font: $app-font;
+  color: $fg-color;
+}
+
+.App-main {
+	flex: 1 0 auto;
+	@include flex-column;
+	margin-top: $padding-l;
+}

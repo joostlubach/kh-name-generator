@@ -1,0 +1,15 @@
+@import "../variables";
+@import "../common";
+
+.GeneratingScreen {
+	@extend %Screen;
+}
+
+.GeneratingScreen-main {
+	flex: 1 0 0;
+	@include flex-center;
+}
+
+.GeneratingScreen-buttons {
+	@extend %Screen-buttons;
+}

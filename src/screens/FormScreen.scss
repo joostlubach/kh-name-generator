@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../common";
+
+.FormScreen {
+	@extend %Screen;
+}
+
+.FormScreen-form {
+	flex: 1 0 0;
+}
+
+.FormScreen-buttons {
+	@extend %Screen-buttons;
+}

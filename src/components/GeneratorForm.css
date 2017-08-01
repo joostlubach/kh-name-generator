@@ -1,0 +1,16 @@
+.GeneratorForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-right: 30%; }
+
+.GeneratorForm-row:not(:first-child) {
+  margin-top: 32px; }
+
+.GeneratorForm-row-content {
+  margin-top: 16px; }
+
+.GeneratorForm-row-instruction {
+  color: #777;
+  font-size: 16px;
+  padding-top: 8px; }

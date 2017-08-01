@@ -1,0 +1,27 @@
+@import "../variables";
+
+.Button {
+	border: none;
+	margin:    0;
+	padding:   $padding-button;
+
+	cursor: pointer;
+
+	min-width: 260px;
+
+	text-align:  center;
+	line-height: 1em;
+
+	background:    $bg-color-button;
+	color:         $fg-color-button;
+	border-radius: 4px;
+}
+
+.Button-disabled {
+	opacity: 0.6;
+}
+
+.Button-label {
+	display: block;
+	margin-bottom: -0.2em;
+}

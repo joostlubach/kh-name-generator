@@ -1,0 +1,66 @@
+@import "./TextField.scss";
+
+.KeywordsField {
+	position: relative;
+	@extend .TextField-input;
+
+	height: auto;
+	min-height: 48px;
+	padding-bottom: 0;
+
+	@include flex-row;
+	flex-wrap: wrap;
+
+	cursor: text;
+}
+
+.KeywordsField-invalid {
+	@extend .TextField-invalid;
+}
+
+.KeywordsField-keyword {
+	@include flex-row;
+	align-items: center;
+
+	height: 32px;
+	padding: 4px;
+	border-radius: 2px;
+	line-height:  24px;
+
+	background: #dfdfdf;
+	color: $fg-color-input;
+
+	margin-bottom: $padding-xs;
+	margin-right: $padding-xs;
+	cursor:       pointer;
+}
+
+.KeywordsField-keywordRemoveButton {
+	display: block;
+
+	border:     none;
+	padding:    0;
+	background: none;
+
+	margin-left:  8px;
+	margin-right: -4px;
+
+	width: 	     16px;
+	height:      16px;
+	font-size:   16px;
+	line-height: 16px;
+
+	color: white;
+}
+
+.KeywordsField-keyword:hover .KeywordsField-keywordRemoveButton {
+	color: $fg-color-negative;
+}
+
+.KeywordsField input {
+	width: auto;
+	min-width: 0;
+	border: none;
+	outline: none;
+	line-height: 28px;
+}

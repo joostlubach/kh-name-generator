@@ -1,0 +1,27 @@
+.TextField-invalid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .TextField-invalid::after {
+    display: block;
+    content: 'x';
+    color: #D0021B; }
+
+.TextField {
+  position: relative; }
+
+.TextField-input {
+  height: 48px;
+  width: 100%;
+  padding: 8px;
+  background: white;
+  color: #1A6FD1;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0; }
+
+.TextField-invalid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 8px; }

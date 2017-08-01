@@ -1,0 +1,76 @@
+.TextField-invalid, .KeywordsField-invalid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .TextField-invalid::after, .KeywordsField-invalid::after {
+    display: block;
+    content: 'x';
+    color: #D0021B; }
+
+.TextField {
+  position: relative; }
+
+.TextField-input, .KeywordsField {
+  height: 48px;
+  width: 100%;
+  padding: 8px;
+  background: white;
+  color: #1A6FD1;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0; }
+
+.TextField-invalid, .KeywordsField-invalid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 8px; }
+
+.KeywordsField {
+  position: relative;
+  height: auto;
+  min-height: 48px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  cursor: text; }
+
+.KeywordsField-keyword {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+  height: 32px;
+  padding: 4px;
+  border-radius: 2px;
+  line-height: 24px;
+  background: #dfdfdf;
+  color: #1A6FD1;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  cursor: pointer; }
+
+.KeywordsField-keywordRemoveButton {
+  display: block;
+  border: none;
+  padding: 0;
+  background: none;
+  margin-left: 8px;
+  margin-right: -4px;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  color: white; }
+
+.KeywordsField-keyword:hover .KeywordsField-keywordRemoveButton {
+  color: #D0021B; }
+
+.KeywordsField input {
+  width: auto;
+  min-width: 0;
+  border: none;
+  outline: none;
+  line-height: 28px; }

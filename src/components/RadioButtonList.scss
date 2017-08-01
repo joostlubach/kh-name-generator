@@ -1,0 +1,28 @@
+@import "../variables";
+
+.RadioButtonList {
+	@include flex-row;
+	flex-wrap: wrap;
+}
+
+.RadioButtonList-choice {
+	@include flex-row;
+	align-items: center;
+	cursor: default;
+
+	margin-bottom: $padding-s;
+	&:not(:last-child) {
+		margin-right: $padding-m;
+	}
+}
+
+.RadioButtonList-choiceRadioButton {
+	flex: 0 0 auto;
+	margin-right: $padding-s;
+}
+
+.RadioButtonList-choiceLabel {
+	flex: 1 0 'auto';
+	white-space: nowrap;
+	color: $fg-color-input;
+}

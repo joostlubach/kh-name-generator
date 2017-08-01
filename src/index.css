@@ -1,0 +1,27 @@
+@font-face {
+	font-family: "Alpha Smart";
+	font-weight: normal;
+	src: url(./assets/AlphaSmart3000.ttf) format('truetype');
+}
+html, body {
+	height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+}
+
+input, select, button {
+	font: inherit;
+	color: inherit;
+}

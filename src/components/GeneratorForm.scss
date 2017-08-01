@@ -1,0 +1,20 @@
+@import "../variables";
+
+.GeneratorForm {
+	@include flex-column;
+	margin-right: 30%;
+}
+
+.GeneratorForm-row:not(:first-child) {
+	margin-top: $padding-l;
+}
+
+.GeneratorForm-row-content {
+	margin-top: $padding-s;
+}
+
+.GeneratorForm-row-instruction {
+	color: $fg-color-dim;
+	font-size: $app-font-s;
+	padding-top: $padding-xs;
+}

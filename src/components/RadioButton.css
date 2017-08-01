@@ -1,0 +1,16 @@
+.RadioButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0; }
+
+.RadioButton-check {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: black; }

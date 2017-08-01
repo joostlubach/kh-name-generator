@@ -1,0 +1,31 @@
+.ResultScreen {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; }
+
+.ResultScreen-buttons {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+  justify-content: center; }
+  .ResultScreen-buttons > :not(:last-child) {
+    margin-right: 24px; }
+
+.ResultScreen-result {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.ResultScreen-resultLabel {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 16px; }
+
+.ResultScreen-resultName {
+  font-size: 64px; }

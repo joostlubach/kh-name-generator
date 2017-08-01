@@ -1,0 +1,59 @@
+// Measurements
+
+$padding-xs: 8px;
+$padding-s: 16px;
+$padding-m: 24px;
+$padding-l: 32px;
+
+$padding-input:  8px;
+$padding-button: 16px 24px;
+
+// Colors
+
+$fg-color: black;
+$fg-color-dim: #777;
+$fg-color-accent: #1A6FD1;
+$fg-color-error: #D0021B;
+
+$fg-color-positive: #1A6FD1;
+$fg-color-negative: #D0021B;
+
+$bg-color-input: white;
+$fg-color-input: #1A6FD1;
+
+$bg-color-button: #1A6FD1;
+$fg-color-button: white;
+
+// Shadows
+
+$shadow-input: rgba(black, 0.1) 0px 2px 4px 0;
+
+// Fonts
+
+$app-font-family: "Alpha Smart", monospace;
+
+$app-font-s:  16px;
+$app-font-m:  24px;
+$app-font-l:  32px;
+$app-font-xl: 64px;
+
+$app-font: $app-font-m $app-font-family;
+
+// Mixins
+
+@mixin flex-column($align-items: stretch) {
+	display: flex;
+	flex-direction: column;
+	align-items: $align-items;
+}
+
+@mixin flex-row($align-items: stretch) {
+	display: flex;
+	flex-direction: row;
+	align-items: $align-items;
+}
+
+@mixin flex-center() {
+	@include flex-column(center)
+	justify-content: center;
+}

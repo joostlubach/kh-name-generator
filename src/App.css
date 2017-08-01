@@ -1,0 +1,16 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: linear-gradient(to bottom, #A7C5ED, #E3ECF9 70%, #97D2AC);
+  padding: 32px;
+  font: 24px "Alpha Smart", monospace;
+  color: black; }
+
+.App-main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 32px; }
