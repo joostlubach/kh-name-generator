@@ -2,13 +2,12 @@ import React from 'react'
 import {Button} from '../components'
 import store from '../store'
 import * as actions from '../actions'
-import './ResultScreen.css'
 
 export default class ResultScreen extends React.Component {
 
   componentWillMount() {
     this.subscription = store.subscribe(state => {
-      this.setState({...state.result, exhausted: state.exhausted})
+      this.setState({...state.result, error: state.error, exhausted: state.exhausted})
     })
   }
 
@@ -17,12 +16,13 @@ export default class ResultScreen extends React.Component {
   }
 
   render() {
-    const {exhausted} = this.state
+    const {exhausted, error} = this.state
 
     return (
       <div className="ResultScreen">
         {exhausted && this.renderExhausted()}
-        {!exhausted && this.renderResult()}
+        {error && this.renderError()}
+        {!exhausted && !error && this.renderResult()}
 
         <div className="ResultScreen-buttons">
           <Button
@@ -56,6 +56,16 @@ export default class ResultScreen extends React.Component {
     )
   }
 
+  renderError() {
+    return (
+      <div className="ResultScreen-error">
+        <div className="ResultScreen-errorLabel">
+          Oeps! Er is iets misgegaan tijdens het genereren. Probeer het opnieuw!
+        </div>
+      </div>
+    )
+  }
+
   renderResult() {
     const {name} = this.state
 
@@ -80,9 +90,7 @@ export default class ResultScreen extends React.Component {
   }
 
   onUseNameClick() {
-    if (window.useBusinessName instanceof Function) {
-      window.useBusinessName(this.state.name)
-    }
+    window.NameGenerator.onNameChosen(this.state.name)
   }
 
 }

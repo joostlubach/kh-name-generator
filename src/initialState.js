@@ -3,6 +3,7 @@ export default {
 	result:     null,
 	generated:  [],
 	exhauseted: false,
+	error:      false,
 
 	form: {
 		ownName:  null,

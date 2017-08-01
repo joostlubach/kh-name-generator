@@ -1,5 +1,4 @@
 import React from 'react'
-import './RadioButton.css'
 
 export default function RadioButton({className, checked}) {
 	return (

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {Logo} from './components'
 import {FormScreen, GeneratingScreen, ResultScreen} from './screens'
 import store from './store'
-import './App.css'
 
 export default class App extends Component {
 
@@ -31,11 +30,11 @@ export default class App extends Component {
   }
 
   renderScreen() {
-    const {generating, result, exhausted} = this.state
+    const {generating, result, exhausted, error} = this.state
 
     if (generating) {
       return <GeneratingScreen/>
-    } else if (result != null || exhausted) {
+    } else if (result != null || exhausted || error) {
       return <ResultScreen/>
     } else {
       return <FormScreen/>

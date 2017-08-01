@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './TextField.css'
 
 export default function TextField(props) {
 	const {value, invalid, onChange, ...other} = props

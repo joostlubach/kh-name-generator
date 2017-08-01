@@ -10,29 +10,33 @@ export default async function generateName() {
 
 	let startTime = new Date()
 
-	let result = null
-	let attempt = 0
-	while (result == null && attempt < 20) {
-		result = await tryGenerate(generator)
-		attempt += 1
-	}
-
-	const now = new Date()
-	const remaining = Math.max(0, startTime.getTime() + 1000 - now)
-
-	setTimeout(() => {
-		if (result == null) {
-			store.setState({exhausted: true, generating: false})
-			return
+	try {
+		let result = null
+		let attempt = 0
+		while (result == null && attempt < 20) {
+			result = await tryGenerate(generator)
+			attempt += 1
 		}
 
-		const {generated} = store.state
-		store.setState({
-			result,
-			generated: [...generated, result.name],
-			generating: false
-		})
-	}, remaining)
+		const now = new Date()
+		const remaining = Math.max(0, startTime.getTime() + 1000 - now)
+
+		setTimeout(() => {
+			if (result == null) {
+				store.setState({exhausted: true, generating: false})
+				return
+			}
+
+			const {generated} = store.state
+			store.setState({
+				result,
+				generated: [...generated, result.name],
+				generating: false
+			})
+		}, remaining)
+	} catch (error) {
+		store.setState({error: true, generating: false})
+	}
 }
 
 async function tryGenerate(generator) {

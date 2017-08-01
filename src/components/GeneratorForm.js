@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {TextField, RadioButtonList, KeywordsField} from '.'
-import './GeneratorForm.css'
 import store from '../store'
 import {Set} from 'immutable'
 

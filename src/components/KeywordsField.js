@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import AutosizeInput from 'react-input-autosize'
-import './KeywordsField.css'
 
 export default class KeywordsField extends React.Component {
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Spinner, Button} from '../components'
-import './GeneratingScreen.css'
 
 export default class GeneratingScreen extends React.Component {
 

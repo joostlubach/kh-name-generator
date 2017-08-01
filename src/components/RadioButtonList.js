@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {RadioButton} from '.'
-import './RadioButtonList.css'
 
 export default class RadioButtonList extends React.Component {
 

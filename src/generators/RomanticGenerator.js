@@ -1,5 +1,4 @@
 import translate from '../translate'
-import suffixes from 'data/romantic/suffixes.json'
 import {sample, namePrefix, titleCase, shuffle} from '../util'
 
 export default class RomanticGenerator {
@@ -12,6 +11,13 @@ export default class RomanticGenerator {
 		const parts = []
 
 		const firstName = this.form.ownName.split(/\s+/)[0]
+
+		const response = await fetch('/data/romantic/suffixes.json')
+		if (response.status !== 200) {
+			throw new Error()
+		}
+
+		const suffixes = await response.json()
 		const suffix  = sample(suffixes)
 
 		let firstNamePrefix = namePrefix(firstName)

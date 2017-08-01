@@ -1,5 +1,4 @@
 import translate from '../translate'
-import wordlist from 'data/hip/words.json'
 import {sample, namePrefix, titleCase, shuffle, syllableCount} from '../util'
 
 export default class HipGenerator {
@@ -34,6 +33,12 @@ export default class HipGenerator {
 			parts.push(...fewSyllables)
 		}
 
+		const response = await fetch('/data/hip/words.json')
+		if (response.status !== 200) {
+			throw new Error()
+		}
+
+		const wordlist = await response.json()
 		parts.push(sample(wordlist))
 
 		if (Math.random() < 0.5 && parts.length > 1) {

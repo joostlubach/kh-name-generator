@@ -54,6 +54,6 @@ $app-font: $app-font-m $app-font-family;
 }
 
 @mixin flex-center() {
-	@include flex-column(center)
+	@include flex-column(center);
 	justify-content: center;
 }
