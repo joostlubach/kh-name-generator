@@ -25,6 +25,12 @@ export default class ResultScreen extends React.Component {
         {!exhausted && this.renderResult()}
 
         <div className="ResultScreen-buttons">
+          <Button
+            label="GEBRUIK DEZE NAAM"
+            onClick={this.onUseNameClick.bind(this)}
+          />
+        </div>
+        <div className="ResultScreen-buttons">
 	        {!exhausted &&
             <Button
 	            label="NIEUWE NAAM"
@@ -71,6 +77,12 @@ export default class ResultScreen extends React.Component {
 
   onStartOverClick() {
     actions.startOver()
+  }
+
+  onUseNameClick() {
+    if (window.useBusinessName instanceof Function) {
+      window.useBusinessName(this.state.name)
+    }
   }
 
 }
