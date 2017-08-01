@@ -13,7 +13,7 @@ export default class GeneratingScreen extends React.Component {
 
         <div className="GeneratingScreen-buttons">
 	        <Button
-	          label="GENERATING"
+	          label="BEZIG MET GENEREREN"
 	          disabled
 	        />
         </div>

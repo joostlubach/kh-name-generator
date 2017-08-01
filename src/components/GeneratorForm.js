@@ -33,7 +33,7 @@ export default class GeneratorForm extends React.Component {
 		return (
 			<div className={`GeneratorForm ${className || ''}`}>
 
-				<FormRow label="1. What is your own name?">
+				<FormRow label="Hoe heet je?">
 					<TextField
 						value={data.ownName || ''}
 						onChange={value => { this.update({ownName: value}) }}
@@ -41,11 +41,11 @@ export default class GeneratorForm extends React.Component {
 					/>
 				</FormRow>
 
-				<FormRow label="2. Choose a theme">
+				<FormRow label="Wat voor soort naam wil je genereren?">
 					<RadioButtonList
 						choices={[
-							{value: 'business', label: "Business-y"},
-							{value: 'classic',  label: "Classic / French"},
+							{value: 'business', label: "Zakelijk"},
+							{value: 'classic',  label: "Romantisch"},
 							{value: 'hip',      label: "Hip"}
 						]}
 						value={data.theme}
@@ -55,8 +55,8 @@ export default class GeneratorForm extends React.Component {
 				</FormRow>
 
 				<FormRow
-					label="3. Enter any keywords for your business"
-					instruction="Separate the keywords with comma's."
+					label="Voer extra steekwoorden in"
+					instruction="Bijvoorbeeld ‘hond, uitlaten, dienst, riem’. Gebruik komma's om de steekwoorden de scheiden."
 				>
 					<KeywordsField
 						value={data.keywords}

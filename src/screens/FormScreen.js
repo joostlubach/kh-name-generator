@@ -22,7 +22,7 @@ export default class FormScreen extends Component {
 
         <div className="FormScreen-buttons">
 	        <Button
-	          label="GENERATE"
+	          label="GENEREER"
 	          onClick={this.onGenerateClick.bind(this)}
 	        />
         </div>

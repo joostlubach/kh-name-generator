@@ -8,8 +8,15 @@ export default function generateName() {
 
 	store.setState({generating: true})
 
+	let startTime = new Date()
+
 	generator.generate().then(result => {
-		store.setState({result, generating: false})
+		const now = new Date()
+		const remaining = Math.max(0, startTime.getTime() + 1000 - now)
+
+		setTimeout(() => {
+			store.setState({result, generating: false})
+		}, remaining)
 	})
 }
 

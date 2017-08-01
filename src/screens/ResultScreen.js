@@ -23,11 +23,11 @@ export default class ResultScreen extends React.Component {
 
         <div className="ResultScreen-buttons">
 	        <Button
-	          label="TRY AGAIN"
+	          label="NIEUWE NAAM"
 	          onClick={this.onTryAgainClick.bind(this)}
 	        />
           <Button
-            label="START OVER"
+            label="BEGIN OPNIEUW"
             onClick={this.onStartOverClick.bind(this)}
           />
         </div>
@@ -41,7 +41,7 @@ export default class ResultScreen extends React.Component {
     return (
       <div className="ResultScreen-result">
         <div className="ResultScreen-resultLabel">
-          How about:
+          Wat dacht je van:
         </div>
         <div className="ResultScreen-resultName">
           {name}

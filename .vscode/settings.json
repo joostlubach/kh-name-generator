@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"javascript.validate.enable": false,
+	"files.associations": {
+		"*.js": "javascriptreact"
+	},
+
+	"search.exclude": {
+		"ios/**/*.js":       true,
+		"ios/build":         true,
+		"android/**/*.js":   true,
+		"android/app/build": true,
+		"**/*.bundle":       true,
+	}
+}
