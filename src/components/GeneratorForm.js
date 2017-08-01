@@ -56,7 +56,7 @@ export default class GeneratorForm extends React.Component {
 
 				<FormRow
 					label="Voer extra steekwoorden in"
-					instruction="Bijvoorbeeld ‘hond, uitlaten, dienst, riem’. Gebruik komma's om de steekwoorden de scheiden."
+					instruction="Bijvoorbeeld ‘hond, uitlaten, riem, wandelen’. Gebruik komma's om de steekwoorden de scheiden."
 				>
 					<KeywordsField
 						value={data.keywords}
