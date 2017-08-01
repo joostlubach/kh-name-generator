@@ -8,7 +8,7 @@ export default class ResultScreen extends React.Component {
 
   componentWillMount() {
     this.subscription = store.subscribe(state => {
-      this.setState(state.result || {})
+      this.setState({...state.result, exhausted: state.exhausted})
     })
   }
 
@@ -17,19 +17,34 @@ export default class ResultScreen extends React.Component {
   }
 
   render() {
+    const {exhausted} = this.state
+
     return (
       <div className="ResultScreen">
-        {this.renderResult()}
+        {exhausted && this.renderExhausted()}
+        {!exhausted && this.renderResult()}
 
         <div className="ResultScreen-buttons">
-	        <Button
-	          label="NIEUWE NAAM"
-	          onClick={this.onTryAgainClick.bind(this)}
-	        />
+	        {!exhausted &&
+            <Button
+	            label="NIEUWE NAAM"
+	            onClick={this.onTryAgainClick.bind(this)}
+	          />
+          }
           <Button
             label="BEGIN OPNIEUW"
             onClick={this.onStartOverClick.bind(this)}
           />
+        </div>
+      </div>
+    )
+  }
+
+  renderExhausted() {
+    return (
+      <div className="ResultScreen-exhausted">
+        <div className="ResultScreen-exhaustedLabel">
+          Pfoei! Er zijn helemaal geen namen meer over. Probeer wat andere trefwoorden of een andere soort naam!
         </div>
       </div>
     )

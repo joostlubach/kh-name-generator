@@ -2,7 +2,7 @@ import store from '../store'
 import * as generators from '../generators'
 import {pascalCase} from '../util'
 
-export default function generateName() {
+export default async function generateName() {
 	const {form} = store.state
 	const generator = createGenerator(form)
 
@@ -10,14 +10,37 @@ export default function generateName() {
 
 	let startTime = new Date()
 
-	generator.generate().then(result => {
-		const now = new Date()
-		const remaining = Math.max(0, startTime.getTime() + 1000 - now)
+	let result = null
+	let attempt = 0
+	while (result == null && attempt < 20) {
+		result = await tryGenerate(generator)
+		attempt += 1
+	}
 
-		setTimeout(() => {
-			store.setState({result, generating: false})
-		}, remaining)
-	})
+	const now = new Date()
+	const remaining = Math.max(0, startTime.getTime() + 1000 - now)
+
+	setTimeout(() => {
+		if (result == null) {
+			store.setState({exhausted: true, generating: false})
+			return
+		}
+
+		const {generated} = store.state
+		store.setState({
+			result,
+			generated: [...generated, result.name],
+			generating: false
+		})
+	}, remaining)
+}
+
+async function tryGenerate(generator) {
+	const {generated} = store.state
+	const result = await generator.generate()
+	if (generated.includes(result.name)) { return null }
+
+	return result
 }
 
 function createGenerator(form) {
@@ -25,7 +48,7 @@ function createGenerator(form) {
 
 	// 'business' => 'BusinessGenerator'
 	const generatorClassName = `${pascalCase(theme)}Generator`
-
 	const Generator = generators[generatorClassName]
+
 	return new Generator(form)
 }

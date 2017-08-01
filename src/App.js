@@ -31,11 +31,11 @@ export default class App extends Component {
   }
 
   renderScreen() {
-    const {generating, result} = this.state
+    const {generating, result, exhausted} = this.state
 
     if (generating) {
       return <GeneratingScreen/>
-    } else if (result != null) {
+    } else if (result != null || exhausted) {
       return <ResultScreen/>
     } else {
       return <FormScreen/>

@@ -1,2 +1,6 @@
+export {default as namePrefix} from './namePrefix'
 export {default as pascalCase} from './pascalCase'
 export {default as sample} from './sample'
+export {default as shuffle} from './shuffle'
+export {default as syllableCount} from './syllableCount'
+export {default as titleCase} from './titleCase'

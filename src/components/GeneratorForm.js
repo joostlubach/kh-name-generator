@@ -45,7 +45,7 @@ export default class GeneratorForm extends React.Component {
 					<RadioButtonList
 						choices={[
 							{value: 'business', label: "Zakelijk"},
-							{value: 'classic',  label: "Romantisch"},
+							{value: 'romantic', label: "Romantisch"},
 							{value: 'hip',      label: "Hip"}
 						]}
 						value={data.theme}
@@ -83,7 +83,7 @@ export default class GeneratorForm extends React.Component {
 			invalid = invalid.add('ownName')
 		}
 
-		if (data.theme === 'hip' && data.keywords.length === 0) {
+		if (data.theme === 'business' && data.keywords.length === 0) {
 			invalid = invalid.add('keywords')
 		}
 

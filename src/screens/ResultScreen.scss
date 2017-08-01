@@ -21,6 +21,15 @@
 	font-size: $app-font-xl;
 }
 
+.ResultScreen-exhausted {
+	flex: 1 0 0;
+	@include flex-center;
+	text-align: center;
+}
+
+.ResultScreen-exhaustedLabel {
+}
+
 .ResultScreen-buttons {
 	@extend %Screen-buttons;
 }

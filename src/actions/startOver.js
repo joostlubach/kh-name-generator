@@ -1,5 +1,5 @@
 import store from '../store'
 
 export default function startOver() {
-	store.setState({result: null})
+	store.setState({generated: [], result: null, exhausted: false})
 }

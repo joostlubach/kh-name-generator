@@ -1,8 +1,6 @@
-// @flow
-
 import translate from '../translate'
-// import wordlist from 'data/business.json'
-import {sample} from '../util'
+import wordlist from 'data/business/words.json'
+import {sample, titleCase, shuffle} from '../util'
 
 export default class BusinessGenerator {
 
@@ -11,13 +9,18 @@ export default class BusinessGenerator {
 	}
 
 	async generate() {
-		// const keyword = sample(this.form.keywords)
-		// const suffix  = sample(wordlist)
-		// const suffix = 'tmp'
-		// const translated = await translate(keyword, {from: 'NL', to: 'EN'})
+		const parts = []
+
+		if (this.form.keywords.length > 0) {
+			const translated = await translate(this.form.keywords, 'nl', 'en')
+			parts.push(...sample(translated, 2))
+		}
+
+		const suffix  = sample(wordlist)
+		parts.push(suffix)
 
 		return {
-			// name: `${translated} ${suffix}`
+			name: titleCase(shuffle(parts).join(' '))
 		}
 	}
 
