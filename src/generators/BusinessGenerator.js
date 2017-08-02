@@ -15,7 +15,8 @@ export default class BusinessGenerator {
 			parts.push(...sample(translated, 2))
 		}
 
-		const response = await fetch('/data/business/words.json')
+		const url = `${window.NameGenerator.basePath}/data/business/words.json`
+		const response = await fetch(url)
 		if (response.status !== 200) {
 			throw new Error()
 		}

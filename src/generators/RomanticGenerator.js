@@ -12,7 +12,8 @@ export default class RomanticGenerator {
 
 		const firstName = this.form.ownName.split(/\s+/)[0]
 
-		const response = await fetch('/data/romantic/suffixes.json')
+		const url = `${window.NameGenerator.basePath}/data/romantic/suffixes.json`
+		const response = await fetch(url)
 		if (response.status !== 200) {
 			throw new Error()
 		}

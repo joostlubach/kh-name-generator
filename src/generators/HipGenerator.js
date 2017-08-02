@@ -33,7 +33,8 @@ export default class HipGenerator {
 			parts.push(...fewSyllables)
 		}
 
-		const response = await fetch('/data/hip/words.json')
+		const url = `${window.NameGenerator.basePath}/data/hip/words.json`
+		const response = await fetch(url)
 		if (response.status !== 200) {
 			throw new Error()
 		}
