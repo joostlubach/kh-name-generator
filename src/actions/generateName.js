@@ -35,6 +35,7 @@ export default async function generateName() {
 			})
 		}, remaining)
 	} catch (error) {
+		console.error(error)
 		store.setState({error: true, generating: false})
 	}
 }

@@ -21,20 +21,24 @@ export default class KeywordsField extends React.Component {
 	}
 
 	splitPartialKeyword(partialKeyword, includeAll) {
-		let lastComma = includeAll
+		partialKeyword = partialKeyword
+			.replace(/[\s,]+/g, ' ')
+			.replace(/[^ \w\d\u00C0-\u017F]/g, '')
+
+		let lastSpace = includeAll
 			? partialKeyword.length
-			: partialKeyword.lastIndexOf(',')
+			: partialKeyword.lastIndexOf(' ')
 
 		// Keep the text after the last comma, so users can continue typing.
-		this.setState({partialKeyword: partialKeyword.slice(lastComma + 1)})
+		this.setState({partialKeyword: partialKeyword.slice(lastSpace + 1)})
 
 		// Stop processing if there was no comma.
-		if (lastComma === -1) { return }
+		if (lastSpace === -1) { return }
 
 		// Extract keywords.
 		const keywords = partialKeyword
-			.slice(0, lastComma)
-			.split(',')
+			.slice(0, lastSpace)
+			.split(' ')
 			.map(keyword => keyword.trim())
 			.filter(keyword => keyword.length > 0)
 

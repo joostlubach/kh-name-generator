@@ -2,7 +2,7 @@ export default {
 	generating: false,
 	result:     null,
 	generated:  [],
-	exhauseted: false,
+	exhausted:  false,
 	error:      false,
 
 	form: {
